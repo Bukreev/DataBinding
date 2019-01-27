@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">DataBinding</string>
+    <string name="user_name">Имя</string>
+    <string name="string_name">StringName</string>
+    <string name="button_next">Далее</string>
+    <string name="user_mail">Email</string>
+    <string name="user_phone">Телефон</string>
+</resources>
