@@ -16,5 +16,13 @@ public class PersonActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_person);
+        final Intent intent = getIntent();
+        final String name = intent.getStringExtra("name");
+        final String email = intent.getStringExtra("email");
+        final String phone = intent.getStringExtra("phone");
+        final Person person = new Person(name, email, phone);
+        final PersonViewModel personViewModel = ViewModelProviders.of(this).get(PersonViewModel.class);
+        personViewModel.setPerson(person);
     }
+
 }

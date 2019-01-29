@@ -56,10 +56,12 @@ public class UserInputView extends FrameLayout implements MyListener {
     @Override
     public final void onClick() {
         final Person person = binding.getPerson();
-        final MainActivity mainActivity = ((MainActivity) getContext());
-        final PersonViewModel personViewModel = ViewModelProviders.of(mainActivity).get(PersonViewModel.class);
-        personViewModel.setPerson(person);
-        mainActivity.startActivity(PersonActivity.class);
+        final Intent intent = new Intent();
+        intent.putExtra("name", person.getName());
+        intent.putExtra("email", person.getEmail());
+        intent.putExtra("phone", person.getPhone());
+        final MainActivity mainActivity = (MainActivity) getContext();
+        mainActivity.startActivity(intent, PersonActivity.class);
     }
 
     private boolean isNotEmpty(final String data) {
