@@ -25,4 +25,15 @@ public class PersonActivity extends AppCompatActivity {
         personViewModel.setPerson(person);
     }
 
+    public static void startActivity(Context context, final Person person)
+    {
+        final PersonViewModel personViewModel = ViewModelProviders.of(context.bindServic).get(PersonViewModel.class);
+        Intent intent = new Intent(context, PersonActivity.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        intent.putExtra("name", person.getName());
+        intent.putExtra("email", person.getEmail());
+        intent.putExtra("phone", person.getPhone());
+        context.startActivity(intent);
+    }
+
 }

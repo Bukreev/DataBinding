@@ -14,6 +14,7 @@ import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 
 import com.example.bukreev.databinding.MainActivity;
+import com.example.bukreev.databinding.PersonActivity;
 import com.example.bukreev.databinding.R;
 import com.example.bukreev.databinding.databinding.SampleUserInputViewBinding;
 import com.example.bukreev.databinding.databinding.SampleUserOutputViewBinding;
@@ -38,8 +39,8 @@ public class UserOutputView extends FrameLayout {
     }
 
     public final void bind() {
-        final MainActivity mainActivity = ((MainActivity) getContext());
-        final PersonViewModel personViewModel = ViewModelProviders.of(mainActivity).get(PersonViewModel.class);
+        final PersonActivity personActivity = ((PersonActivity) getContext());
+        final PersonViewModel personViewModel = ViewModelProviders.of(personActivity).get(PersonViewModel.class);
         final Person person = personViewModel.getPerson();
         binding.setPerson(person);
     }
